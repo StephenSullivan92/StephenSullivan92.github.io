@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stephen Sullivan — Instructional Design Portfolio</title>
+<meta name="description" content="Instructional Design portfolio of Stephen Sullivan — curriculum developer, e-learning designer, and learning experience specialist."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{--navy:#0f2340;--navy-mid:#1a3a5c;--accent:#2a7fff;--accent-light:#e8f1ff;--gold:#c9993a;--gold-light:#fdf4e3;--teal:#1a8c7a;--teal-light:#e2f5f2;--coral:#d95f3b;--coral-light:#fdf0ec;--purple:#7c3aed;--purple-light:#ede9fe;--text:#1c2b3a;--text-muted:#5a6b7c;--border:#e2e8f0;--bg:#f8fafc;--white:#ffffff;--card-shadow:0 2px 12px rgba(15,35,64,0.08);--card-shadow-hover:0 8px 32px rgba(15,35,64,0.16);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,35,64,0.97);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:62px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .nav-logo{font-family:'DM Serif Display',serif;font-size:1.15rem;color:#fff;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:1.5rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover{color:#fff;}
+  .hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:6rem 2.5rem 4rem;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 70% 50%,rgba(42,127,255,0.12) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(201,153,58,0.08) 0%,transparent 60%);pointer-events:none;}
+  .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;width:100%;position:relative;z-index:1;}
+  .hero-eyebrow{font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;}
+  .hero-name{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);color:#fff;line-height:1.08;margin-bottom:1rem;}
+  .hero-name em{font-style:italic;color:var(--gold);}
+  .hero-desc{font-size:1.05rem;color:rgba(255,255,255,0.62);max-width:440px;line-height:1.8;margin-bottom:2.2rem;}
+  .hero-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;padding:0.75rem 1.75rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:background 0.2s,transform 0.2s;}
+  .hero-cta:hover{background:#1a6de0;transform:translateY(-1px);}
+  .hero-cta-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.8);padding:0.75rem 1.75rem;border-radius:6px;text-decoration:none;font-weight:500;font-size:0.9rem;margin-left:1rem;transition:border-color 0.2s,color 0.2s;}
+  .hero-cta-ghost:hover{border-color:rgba(255,255,255,0.6);color:#fff;}
+  .hero-stats{display:flex;flex-direction:column;gap:1.5rem;}
+  .stat-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem 1.75rem;backdrop-filter:blur(8px);transition:background 0.2s;}
+  .stat-card:hover{background:rgba(255,255,255,0.08);}
+  .stat-number{font-family:'DM Serif Display',serif;font-size:2.4rem;color:var(--gold);line-height:1;margin-bottom:0.25rem;}
+  .stat-label{font-size:0.85rem;color:rgba(255,255,255,0.55);}
+  .stat-sub{font-size:0.78rem;color:rgba(255,255,255,0.35);margin-top:0.2rem;}
+  section{padding:6rem 2.5rem;}
+  .container{max-width:1100px;margin:0 auto;}
+  .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);color:var(--navy);line-height:1.15;margin-bottom:1rem;}
+  .section-desc{font-size:1rem;color:var(--text-muted);max-width:580px;line-height:1.8;margin-bottom:3rem;}
+  #about{background:var(--white);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+  .pillar{display:flex;gap:1.1rem;align-items:flex-start;margin-bottom:1.25rem;}
+  .pillar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
+  .pillar-text h4{font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:0.2rem;}
+  .pillar-text p{font-size:0.88rem;color:var(--text-muted);line-height:1.6;}
+  .tools-grid{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem;}
+  .tool-tag{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:0.35rem 0.9rem;font-size:0.8rem;font-weight:500;color:var(--text-muted);}
+  #casestudies{background:var(--bg);}
+  .case-study{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--card-shadow);margin-bottom:2.5rem;transition:box-shadow 0.25s;}
+  .case-study:hover{box-shadow:var(--card-shadow-hover);}
+  .case-banner{min-height:190px;display:flex;flex-direction:column;justify-content:space-between;padding:2rem 2.5rem;position:relative;overflow:hidden;}
+  .case-badge{display:inline-flex;align-items:center;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.06em;text-transform:uppercase;width:fit-content;}
+  .case-title{font-family:'DM Serif Display',serif;font-size:1.7rem;color:#fff;line-height:1.2;position:relative;z-index:1;}
+  .case-sub{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;position:relative;z-index:1;}
+  .case-body{padding:2.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
+  .case-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+  .case-col p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+  .case-meta-row{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.25rem 2.5rem;background:var(--bg);border-top:1px solid var(--border);}
+  .case-meta-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);display:block;}
+  .case-meta-val{font-size:0.85rem;font-weight:500;color:var(--text);}
+  .outcome-pill{display:inline-flex;align-items:center;gap:0.4rem;background:var(--teal-light);color:var(--teal);border-radius:20px;padding:0.3rem 0.75rem;font-size:0.78rem;font-weight:600;margin:0.2rem;}
+  .outcome-pill.gold{background:var(--gold-light);color:var(--gold);}
+  .outcome-pill.blue{background:var(--accent-light);color:var(--accent);}
+  #samples{background:var(--white);}
+  .samples-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .sample-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;display:flex;flex-direction:column;}
+  .sample-card:hover{box-shadow:var(--card-shadow-hover);transform:translateY(-3px);}
+  .sample-thumb{height:150px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+  .sample-info{padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:0.6rem;}
+  .sample-type{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+  .sample-title{font-size:0.95rem;font-weight:600;color:var(--navy);line-height:1.35;}
+  .sample-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.6;flex:1;}
+  .sample-tools{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;}
+  .sample-tool{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:0.2rem 0.55rem;font-size:0.72rem;font-weight:500;color:var(--text-muted);}
+  .sample-link{display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:600;color:var(--accent);text-decoration:none;margin-top:0.75rem;}
+  .sample-link:hover{color:#1a6de0;}
+  #sample{background:var(--bg);}
+  .lesson-container{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--card-shadow);}
+  .lesson-header{background:var(--navy);padding:2rem 2.5rem;}
+  .lesson-header h2{font-family:'DM Serif Display',serif;font-size:1.7rem;color:#fff;margin-bottom:0.4rem;}
+  .lesson-header p{font-size:0.9rem;color:rgba(255,255,255,0.55);}
+  .lesson-meta-bar{display:flex;gap:2rem;background:rgba(255,255,255,0.06);border-top:1px solid rgba(255,255,255,0.08);padding:1rem 2.5rem;}
+  .lesson-meta-item{font-size:0.8rem;color:rgba(255,255,255,0.55);}
+  .lesson-meta-item strong{color:rgba(255,255,255,0.85);display:block;margin-bottom:0.1rem;}
+  .lesson-body{padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+  .lesson-section h4{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.9rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;}
+  .obj-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  .obj-list li{font-size:0.88rem;color:var(--text-muted);display:flex;gap:0.6rem;line-height:1.5;}
+  .obj-list li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;}
+  .bloom-badge{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;margin-left:0.4rem;background:var(--gold-light);color:var(--gold);}
+  .activity-block{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:0.8rem;}
+  .activity-block .tag{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:0.7rem;font-weight:600;padding:0.2rem 0.55rem;border-radius:4px;margin-bottom:0.4rem;}
+  .activity-block h5{font-size:0.85rem;font-weight:600;color:var(--navy);margin-bottom:0.3rem;}
+  .activity-block p{font-size:0.82rem;color:var(--text-muted);line-height:1.5;}
+  .process-step{display:flex;gap:0.9rem;align-items:flex-start;margin-bottom:0.75rem;}
+  .step-dot{width:22px;height:22px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--accent);flex-shrink:0;margin-top:0.1rem;}
+  .step-content h5{font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:0.15rem;}
+  .step-content p{font-size:0.82rem;color:var(--text-muted);line-height:1.5;}
+  #testimonials{background:var(--navy);}
+  #testimonials .section-title{color:#fff;}
+  #testimonials .section-desc{color:rgba(255,255,255,0.5);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .testimonial-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;transition:background 0.2s;}
+  .testimonial-card:hover{background:rgba(255,255,255,0.08);}
+  .testimonial-quote{font-size:0.92rem;color:rgba(255,255,255,0.8);line-height:1.75;font-style:italic;flex:1;}
+  .testimonial-quote::before{content:'\201C';font-family:'DM Serif Display',serif;font-size:2rem;color:var(--gold);line-height:0;vertical-align:-0.5rem;margin-right:0.2rem;}
+  .testimonial-author{display:flex;align-items:center;gap:0.75rem;}
+  .testimonial-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0;}
+  .testimonial-name{font-size:0.85rem;font-weight:600;color:#fff;}
+  .testimonial-role{font-size:0.75rem;color:rgba(255,255,255,0.45);}
+  .stars{color:var(--gold);font-size:0.8rem;letter-spacing:0.1em;}
+  #skills{background:var(--white);}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .skill-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:box-shadow 0.2s;}
+  .skill-card:hover{box-shadow:var(--card-shadow);}
+  .skill-card-icon{font-size:1.5rem;margin-bottom:1rem;}
+  .skill-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:0.75rem;}
+  .skill-bar-item{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.65rem;}
+  .skill-bar-label{display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text-muted);}
+  .skill-bar-track{height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+  .skill-bar-fill{height:100%;border-radius:3px;background:var(--accent);}
+  .skill-bar-fill.gold{background:var(--gold);}
+  .skill-bar-fill.teal{background:var(--teal);}
+  #process{background:var(--bg);}
+  .addie-timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2rem;}
+  .addie-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.25rem;transition:box-shadow 0.2s,transform 0.2s;}
+  .addie-card:hover{box-shadow:var(--card-shadow-hover);transform:translateY(-3px);}
+  .addie-letter{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1;margin-bottom:0.5rem;}
+  .addie-card h4{font-size:0.9rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem;}
+  .addie-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
+  .addie-card.a1{border-top:3px solid var(--accent);} .addie-card.a1 .addie-letter{color:var(--accent);}
+  .addie-card.a2{border-top:3px solid var(--gold);} .addie-card.a2 .addie-letter{color:var(--gold);}
+  .addie-card.a3{border-top:3px solid var(--teal);} .addie-card.a3 .addie-letter{color:var(--teal);}
+  .addie-card.a4{border-top:3px solid var(--coral);} .addie-card.a4 .addie-letter{color:var(--coral);}
+  .addie-card.a5{border-top:3px solid var(--purple);} .addie-card.a5 .addie-letter{color:var(--purple);}
+  #contact{background:var(--navy);}
+  #contact .section-title{color:#fff;}
+  #contact .section-desc{color:rgba(255,255,255,0.55);max-width:520px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+  .contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.25rem;}
+  .contact-icon{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .contact-item h4{font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;}
+  .contact-item p{font-size:0.95rem;color:rgba(255,255,255,0.85);}
+  .contact-form{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:2rem;}
+  .form-group{margin-bottom:1.1rem;}
+  .form-group label{display:block;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.5);margin-bottom:0.4rem;letter-spacing:0.06em;text-transform:uppercase;}
+  .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:0.7rem 1rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.25);}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--accent);}
+  .form-group textarea{min-height:100px;resize:vertical;}
+  .form-submit{width:100%;background:var(--accent);color:#fff;border:none;border-radius:8px;padding:0.8rem;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:background 0.2s;}
+  .form-submit:hover{background:#1a6de0;}
+  footer{background:#08172a;padding:1.5rem 2.5rem;text-align:center;font-size:0.8rem;color:rgba(255,255,255,0.25);}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){.hero-grid,.about-grid,.contact-grid,.lesson-body,.case-body{grid-template-columns:1fr;}.skills-grid,.testimonials-grid,.samples-grid{grid-template-columns:1fr 1fr;}.addie-timeline{grid-template-columns:1fr 1fr;}nav{padding:0 1.5rem;}section{padding:4rem 1.5rem;}.nav-links{gap:1rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Stephen <span>Sullivan</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#casestudies">Case Studies</a></li>
+    <li><a href="#samples">Work Samples</a></li>
+    <li><a href="#sample">Live Demo</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-eyebrow">Instructional Design Portfolio</p>
+      <h1 class="hero-name">Stephen Sullivan<br/><em>Learning Experience Designer</em></h1>
+      <p class="hero-desc">Former high school ELA educator turned instructional designer — bridging the gap between rich content and meaningful learning outcomes for corporate, e-learning, and professional development contexts.</p>
+      <a href="#casestudies" class="hero-cta">View Case Studies</a>
+      <a href="#contact" class="hero-cta-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">Years designing learning experiences</div><div class="stat-sub">High school, adult learners & corporate settings</div></div>
+      <div class="stat-card"><div class="stat-number">94%</div><div class="stat-label">Learner satisfaction rate</div><div class="stat-sub">Across professional development workshops</div></div>
+      <div class="stat-card"><div class="stat-number">40%</div><div class="stat-label">Improvement in module completion</div><div class="stat-sub">After needs-assessment-driven redesign</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div>
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Teaching shaped how I think about learning design</h2>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">Five years in the high school ELA classroom taught me that the best instruction doesn't just deliver content — it removes barriers, builds confidence, and makes the "why" impossible to miss. I carry that philosophy into every learning experience I design.</p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2rem;">I specialize in applying the ADDIE model, Bloom's Taxonomy, and adult learning theory to design training programs that are measurable, scalable, and genuinely engaging — whether that's corporate onboarding, e-learning modules, or professional development for fellow educators.</p>
+        <div class="tools-grid">
+          <span class="tool-tag">Articulate Rise</span><span class="tool-tag">Articulate Storyline</span><span class="tool-tag">Canvas LMS</span><span class="tool-tag">Google Workspace</span><span class="tool-tag">Canva</span><span class="tool-tag">Loom</span><span class="tool-tag">Figma</span><span class="tool-tag">Kirkpatrick Model</span><span class="tool-tag">ADDIE</span><span class="tool-tag">Bloom's Taxonomy</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;">Design Philosophy</p>
+        <div class="pillar"><div class="pillar-icon" style="background:var(--accent-light);">🎯</div><div class="pillar-text"><h4>Objectives first, always</h4><p>Every design decision is anchored to a measurable learning objective. If it doesn't serve the outcome, it doesn't make the cut.</p></div></div>
+        <div class="pillar"><div class="pillar-icon" style="background:var(--gold-light);">🧠</div><div class="pillar-text"><h4>Learner-centered empathy</h4><p>I conduct needs assessments and analyze learner data before touching a slide. Real design starts with real understanding.</p></div></div>
+        <div class="pillar"><div class="pillar-icon" style="background:var(--teal-light);">📊</div><div class="pillar-text"><h4>Measure and iterate</h4><p>Training that can't be evaluated can't be improved. I build assessment and feedback loops into every deliverable.</p></div></div>
+        <div class="pillar"><div class="pillar-icon" style="background:var(--coral-light);">⚡</div><div class="pillar-text"><h4>Engagement as a strategy</h4><p>Passive learners don't retain. I design for active participation — scenarios, reflection prompts, and purposeful interaction.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="casestudies">
+  <div class="container">
+    <p class="section-label reveal">Case Studies</p>
+    <h2 class="section-title reveal">The problem. The process. The outcome.</h2>
+    <p class="section-desc reveal">Each case study walks through my full design thinking — not just the final deliverable, but the why behind every decision.</p>
+
+    <div class="case-study reveal">
+      <div class="case-banner" style="background:linear-gradient(135deg,#0f2340,#1a3a5c);position:relative;overflow:hidden;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.35" viewBox="0 0 700 190" preserveAspectRatio="xMidYMid slice"><circle cx="600" cy="40" r="130" fill="none" stroke="rgba(42,127,255,0.35)" stroke-width="1"/><circle cx="600" cy="40" r="90" fill="none" stroke="rgba(42,127,255,0.2)" stroke-width="1"/><rect x="40" y="75" width="52" height="52" rx="8" fill="rgba(42,127,255,0.15)" stroke="rgba(42,127,255,0.35)" stroke-width="1"/><circle cx="66" cy="90" r="9" fill="rgba(42,127,255,0.45)"/><path d="M48 125 Q48 111 66 111 Q84 111 84 125" fill="rgba(42,127,255,0.45)"/><line x1="92" y1="101" x2="140" y2="101" stroke="rgba(42,127,255,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/><rect x="140" y="75" width="52" height="52" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/><circle cx="166" cy="90" r="9" fill="rgba(255,255,255,0.2)"/><path d="M148 125 Q148 111 166 111 Q184 111 184 125" fill="rgba(255,255,255,0.2)"/></svg>
+        <div style="position:relative;z-index:1;"><div class="case-badge">🏢 Corporate L&D · Case Study 01</div></div>
+        <div style="position:relative;z-index:1;"><div class="case-title">New Employee Onboarding Redesign</div><div class="case-sub">Fictional client: Meridian Financial Group</div></div>
+      </div>
+      <div class="case-body">
+        <div class="case-col"><h4>The Problem</h4><p>New hires reached their 90-day reviews without understanding core compliance requirements or culture. A needs assessment revealed 68% couldn't recall key compliance policies two weeks after orientation. The existing onboarding was a 4-hour slide deck read aloud by HR — no interaction, no assessment, no follow-up.</p></div>
+        <div class="case-col"><h4>My Design Process</h4><p>I conducted stakeholder interviews with HR, legal, and three department managers to identify the highest-priority gaps. Bloom's analysis revealed 90% of existing content operated only at the Remember level. I designed a 3-day blended solution: self-paced e-learning pre-work, two facilitated workshops, and a job aid library. I storyboarded, ran a pilot cohort, and revised before full rollout.</p></div>
+        <div class="case-col"><h4>Outcomes & Impact</h4><div style="display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="outcome-pill">📉 30% faster time-to-productivity</span><span class="outcome-pill gold">📋 12 role-specific job aids</span><span class="outcome-pill blue">✅ Kirkpatrick L1 & L2 evaluation built in</span><span class="outcome-pill">👥 2 pilot cohorts iterated</span></div></div>
+      </div>
+      <div class="case-meta-row">
+        <div><span class="case-meta-label">Audience</span><span class="case-meta-val">New hires, all departments</span></div>
+        <div><span class="case-meta-label">Duration</span><span class="case-meta-val">3-day blended program</span></div>
+        <div><span class="case-meta-label">Modality</span><span class="case-meta-val">ILT + e-learning + job aids</span></div>
+        <div><span class="case-meta-label">Tools</span><span class="case-meta-val">Articulate Rise, Canvas LMS, Canva</span></div>
+        <div><span class="case-meta-label">Framework</span><span class="case-meta-val">ADDIE + Kirkpatrick</span></div>
+      </div>
+    </div>
+
+    <div class="case-study reveal">
+      <div class="case-banner" style="background:linear-gradient(135deg,#0e2218,#1a3a28);position:relative;overflow:hidden;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.4" viewBox="0 0 700 190" preserveAspectRatio="xMidYMid slice"><path d="M-20 80 Q175 60 350 90 Q525 120 720 80" fill="none" stroke="rgba(26,140,122,0.5)" stroke-width="2"/><path d="M-20 110 Q175 90 350 120 Q525 150 720 110" fill="none" stroke="rgba(26,140,122,0.3)" stroke-width="1.5"/><rect x="430" y="45" width="180" height="115" rx="10" fill="rgba(26,140,122,0.12)" stroke="rgba(26,140,122,0.35)" stroke-width="1.5"/><rect x="442" y="57" width="156" height="80" rx="4" fill="rgba(26,140,122,0.08)"/><rect x="455" y="70" width="85" height="5" rx="2" fill="rgba(26,140,122,0.6)"/><rect x="455" y="82" width="120" height="3" rx="2" fill="rgba(255,255,255,0.15)"/><rect x="455" y="92" width="100" height="3" rx="2" fill="rgba(255,255,255,0.12)"/></svg>
+        <div style="position:relative;z-index:1;"><div class="case-badge">💻 E-Learning · Case Study 02</div></div>
+        <div style="position:relative;z-index:1;"><div class="case-title">Adult Literacy: Writing for Everyday Life</div><div class="case-sub">City Literacy Project — 6-module self-paced course</div></div>
+      </div>
+      <div class="case-body">
+        <div class="case-col"><h4>The Problem</h4><p>Community learners needed practical writing skills for real-life contexts. The existing course had a 30% completion rate. A learner survey identified the core barriers: content felt patronizing, reading level was inconsistent, and nothing was tied to scenarios learners actually recognized from their own lives.</p></div>
+        <div class="case-col"><h4>My Design Process</h4><p>I conducted 12 learner interviews before designing a single slide. Results showed scenario-based learning was the critical variable. I restructured the entire course around six real-life situations (cover letter, landlord email, workplace communication, etc.), applying plain language principles throughout. Every module was piloted with 3 learners before publishing.</p></div>
+        <div class="case-col"><h4>Outcomes & Impact</h4><div style="display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="outcome-pill">📈 Completion: 30% → 70%</span><span class="outcome-pill gold">🎯 6 scenario-based modules</span><span class="outcome-pill blue">♿ Fully accessible design</span><span class="outcome-pill">🎥 Loom video intros per module</span></div></div>
+      </div>
+      <div class="case-meta-row">
+        <div><span class="case-meta-label">Audience</span><span class="case-meta-val">Adult community learners</span></div>
+        <div><span class="case-meta-label">Duration</span><span class="case-meta-val">6 self-paced modules (~25 min each)</span></div>
+        <div><span class="case-meta-label">Modality</span><span class="case-meta-val">Asynchronous e-learning</span></div>
+        <div><span class="case-meta-label">Tools</span><span class="case-meta-val">Articulate Rise, Loom, Google Sites</span></div>
+        <div><span class="case-meta-label">Framework</span><span class="case-meta-val">ADDIE + Adult Learning Theory</span></div>
+      </div>
+    </div>
+
+    <div class="case-study reveal">
+      <div class="case-banner" style="background:linear-gradient(135deg,#1a0a2e,#2a1048);position:relative;overflow:hidden;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.45" viewBox="0 0 700 190" preserveAspectRatio="xMidYMid slice"><circle cx="350" cy="55" r="28" fill="rgba(201,153,58,0.2)" stroke="rgba(201,153,58,0.45)" stroke-width="1.5"/><circle cx="350" cy="47" r="11" fill="rgba(201,153,58,0.45)"/><path d="M328 73 Q328 60 350 60 Q372 60 372 73" fill="rgba(201,153,58,0.4)"/><line x1="350" y1="83" x2="180" y2="148" stroke="rgba(201,153,58,0.2)" stroke-width="1" stroke-dasharray="4 4"/><line x1="350" y1="83" x2="280" y2="148" stroke="rgba(201,153,58,0.2)" stroke-width="1" stroke-dasharray="4 4"/><line x1="350" y1="83" x2="420" y2="148" stroke="rgba(201,153,58,0.2)" stroke-width="1" stroke-dasharray="4 4"/><line x1="350" y1="83" x2="520" y2="148" stroke="rgba(201,153,58,0.2)" stroke-width="1" stroke-dasharray="4 4"/><circle cx="180" cy="158" r="15" fill="rgba(139,92,246,0.3)" stroke="rgba(139,92,246,0.45)" stroke-width="1"/><circle cx="280" cy="158" r="15" fill="rgba(139,92,246,0.3)" stroke="rgba(139,92,246,0.45)" stroke-width="1"/><circle cx="420" cy="158" r="15" fill="rgba(139,92,246,0.3)" stroke="rgba(139,92,246,0.45)" stroke-width="1"/><circle cx="520" cy="158" r="15" fill="rgba(139,92,246,0.3)" stroke="rgba(139,92,246,0.45)" stroke-width="1"/></svg>
+        <div style="position:relative;z-index:1;"><div class="case-badge">🎓 Professional Development · Case Study 03</div></div>
+        <div style="position:relative;z-index:1;"><div class="case-title">Differentiated Instruction Workshop Series</div><div class="case-sub">Lincoln Unified School District — 8 sessions, 40+ educators</div></div>
+      </div>
+      <div class="case-body">
+        <div class="case-col"><h4>The Problem</h4><p>District data showed inconsistent use of differentiated instruction across secondary classrooms. Previous PD had less than 20% application rate at 30 days. Teachers described sessions as irrelevant compliance exercises — content delivered at them, not with them. The format was the problem as much as the content.</p></div>
+        <div class="case-col"><h4>My Design Process</h4><p>I applied andragogy from the ground up: each session opened with a real classroom challenge from participants, modeled one specific strategy, provided structured practice time, and closed with a 2-week application commitment. I built peer observation and reflection cycles between sessions — designed into the sequence, not optional. I created all facilitator guides, participant workbooks, and slide decks from scratch.</p></div>
+        <div class="case-col"><h4>Outcomes & Impact</h4><div style="display:flex;flex-wrap:wrap;gap:0.4rem;"><span class="outcome-pill">⭐ 94% participant satisfaction</span><span class="outcome-pill gold">📚 8 full facilitator guides</span><span class="outcome-pill blue">🔁 Peer observation cycles built in</span><span class="outcome-pill">✅ 80% applied 2+ strategies at 30 days</span></div></div>
+      </div>
+      <div class="case-meta-row">
+        <div><span class="case-meta-label">Audience</span><span class="case-meta-val">Secondary educators (40+)</span></div>
+        <div><span class="case-meta-label">Duration</span><span class="case-meta-val">8 × 90-min ILT sessions</span></div>
+        <div><span class="case-meta-label">Modality</span><span class="case-meta-val">In-person ILT + blended application</span></div>
+        <div><span class="case-meta-label">Tools</span><span class="case-meta-val">Nearpod, Padlet, Google Slides</span></div>
+        <div><span class="case-meta-label">Framework</span><span class="case-meta-val">ADDIE + Andragogy + Kirkpatrick</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK SAMPLES -->
+<section id="samples">
+  <div class="container">
+    <p class="section-label reveal">Work Samples</p>
+    <h2 class="section-title reveal">Explore the deliverables</h2>
+    <p class="section-desc reveal">A curated set of interactive prototypes, design artifacts, and learning assets from my projects.</p>
+    <div class="samples-grid reveal">
+      <div class="sample-card">
+        <div class="sample-thumb" style="background:linear-gradient(135deg,#0f2340,#2a7fff22);">🎭</div>
+        <div class="sample-info">
+          <span class="sample-type" style="color:var(--accent);">Interactive E-Learning</span>
+          <div class="sample-title">Customer Service Excellence — Full Storyline Module</div>
+          <div class="sample-desc">A 7-slide Storyline-style module with branching scenarios, drag-and-drop sorting, click-to-reveal interactions, and a completion screen. Demonstrates scenario-based design in a corporate context.</div>
+          <div class="sample-tools"><span class="sample-tool">Articulate Storyline</span><span class="sample-tool">Branching Scenarios</span><span class="sample-tool">HEART Framework</span></div>
+          <a class="sample-link" href="Customer_Service_Training_Storyline.html" target="_blank">▶ Launch Interactive Module →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-thumb" style="background:linear-gradient(135deg,#0e2218,#1a8c7a22);">📧</div>
+        <div class="sample-info">
+          <span class="sample-type" style="color:var(--teal);">Onboarding Module</span>
+          <div class="sample-title">Workplace Communication — Interactive Demo</div>
+          <div class="sample-desc">A 5-slide onboarding module on professional email writing with a branching decision, the CLEAR framework, a scenario-based knowledge check, and a learner reflection prompt.</div>
+          <div class="sample-tools"><span class="sample-tool">Articulate Rise</span><span class="sample-tool">Branching Logic</span><span class="sample-tool">Bloom's Taxonomy</span></div>
+          <a class="sample-link" href="#sample">▶ View Live Demo below →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-thumb" style="background:linear-gradient(135deg,#1a0a2e,#7c3aed22);">📋</div>
+        <div class="sample-info">
+          <span class="sample-type" style="color:var(--purple);">Design Document</span>
+          <div class="sample-title">Needs Assessment & Learning Blueprint</div>
+          <div class="sample-desc">A sample needs assessment report and course design blueprint — including audience analysis, gap analysis, learning objectives mapped to Bloom's levels, and modality rationale.</div>
+          <div class="sample-tools"><span class="sample-tool">Needs Analysis</span><span class="sample-tool">Bloom's Taxonomy</span><span class="sample-tool">Adult Learning Theory</span></div>
+          <a class="sample-link" href="#contact">📩 Request this document →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-thumb" style="background:linear-gradient(135deg,#2a1a00,#c9993a22);">🗂️</div>
+        <div class="sample-info">
+          <span class="sample-type" style="color:var(--gold);">Facilitation Guide</span>
+          <div class="sample-title">Differentiated Instruction — Facilitator Guide</div>
+          <div class="sample-desc">A complete 90-minute session facilitator guide including timing, discussion prompts, activity instructions, debrief questions, and participant handout references. Designed for trainer reuse.</div>
+          <div class="sample-tools"><span class="sample-tool">ILT Design</span><span class="sample-tool">Andragogy</span><span class="sample-tool">Train-the-Trainer</span></div>
+          <a class="sample-link" href="#contact">📩 Request this document →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-thumb" style="background:linear-gradient(135deg,#001a1a,#1a8c7a33);">📊</div>
+        <div class="sample-info">
+          <span class="sample-type" style="color:var(--teal);">Evaluation Report</span>
+          <div class="sample-title">Kirkpatrick L1–L3 Evaluation Summary</div>
+          <div class="sample-desc">A post-program evaluation report applying the Kirkpatrick model — reaction data, knowledge assessment results, and 30-day behavior transfer findings with recommended next steps.</div>
+          <div class="sample-tools"><span class="sample-tool">Kirkpatrick Model</span><span class="sample-tool">Data Analysis</span><span class="sample-tool">Program Evaluation</span></div>
+          <a class="sample-link" href="#contact">📩 Request this document →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-thumb" style="background:linear-gradient(135deg,#0f1a30,#2a7fff33);">📐</div>
+        <div class="sample-info">
+          <span class="sample-type" style="color:var(--accent);">Storyboard</span>
+          <div class="sample-title">E-Learning Storyboard — Writing for Everyday Life</div>
+          <div class="sample-desc">A full visual storyboard for Module 3 of the adult literacy course — slide layouts, narration scripts, interaction notes, and branching logic annotations.</div>
+          <div class="sample-tools"><span class="sample-tool">Storyboarding</span><span class="sample-tool">Script Writing</span><span class="sample-tool">Articulate Rise</span></div>
+          <a class="sample-link" href="#contact">📩 Request this document →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO -->
+<section id="sample">
+  <div class="container">
+    <p class="section-label reveal">Live Demo</p>
+    <h2 class="section-title reveal">Try it yourself — interactive e-learning sample</h2>
+    <p class="section-desc reveal">This module demonstrates scenario-based learning design for a corporate onboarding context. Click through all 5 slides exactly as a learner would.</p>
+    <div class="lesson-container reveal">
+      <div class="lesson-header"><h2>Workplace Communication: Writing Clear Professional Emails</h2><p>Sample lesson from the Meridian Financial Group Onboarding Program</p></div>
+      <div class="lesson-meta-bar">
+        <div class="lesson-meta-item"><strong>Duration</strong>45 minutes</div>
+        <div class="lesson-meta-item"><strong>Modality</strong>Blended (e-learning + discussion)</div>
+        <div class="lesson-meta-item"><strong>Audience</strong>New corporate hires</div>
+        <div class="lesson-meta-item"><strong>Framework</strong>ADDIE + Bloom's Taxonomy</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-section">
+          <h4>Learning Objectives</h4>
+          <ul class="obj-list">
+            <li>Identify the key components of a professional email <span class="bloom-badge">Remember</span></li>
+            <li>Distinguish appropriate vs. inappropriate workplace tone <span class="bloom-badge">Analyze</span></li>
+            <li>Compose a professional email response to a realistic scenario <span class="bloom-badge">Create</span></li>
+            <li>Evaluate a peer's draft using a provided rubric <span class="bloom-badge">Evaluate</span></li>
+          </ul>
+          <h4 style="margin-top:1.5rem;">Assessment Strategy</h4>
+          <div class="activity-block"><div class="tag">Formative</div><h5>Scenario-based knowledge check</h5><p>3 multiple-choice questions embedded in the module; learners must score 80% to proceed.</p></div>
+          <div class="activity-block"><div class="tag">Summative</div><h5>Email drafting task</h5><p>Learners compose a reply to a simulated client complaint, assessed via a 4-point rubric covering tone, structure, clarity, and professionalism.</p></div>
+        </div>
+        <div class="lesson-section">
+          <h4>Instructional Sequence</h4>
+          <div class="process-step"><div class="step-dot">1</div><div class="step-content"><h5>Hook (5 min) — Email disaster case study</h5><p>Learners read a poorly written email and its real-world consequences. Activates prior knowledge and primes motivation.</p></div></div>
+          <div class="process-step"><div class="step-dot">2</div><div class="step-content"><h5>Instruction (10 min) — The CLEAR framework</h5><p>Introduces a mnemonic: Concise, Logical, Error-free, Appropriate tone, Reader-focused.</p></div></div>
+          <div class="process-step"><div class="step-dot">3</div><div class="step-content"><h5>Practice (15 min) — Spot & fix activity</h5><p>Drag-and-drop interaction identifying issues in 3 sample emails with immediate feedback.</p></div></div>
+          <div class="process-step"><div class="step-dot">4</div><div class="step-content"><h5>Application (10 min) — Compose a real email</h5><p>Learners write a CLEAR-framework response to a simulated scenario for peer and facilitator review.</p></div></div>
+          <div class="process-step"><div class="step-dot">5</div><div class="step-content"><h5>Debrief (5 min) — Reflection prompt</h5><p>"What's one communication habit you want to change this week?" Shared in the cohort discussion board.</p></div></div>
+        </div>
+      </div>
+      <div style="padding:1.5rem 2.5rem;background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+        <p style="font-size:0.88rem;color:var(--text-muted);flex:1;">Want to experience a fully interactive Storyline-style module on a similar topic?</p>
+        <a href="Customer_Service_Training_Storyline.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;padding:0.7rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;white-space:nowrap;flex-shrink:0;">▶ Launch Full Interactive Module</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-label reveal" style="color:rgba(255,255,255,0.45);">What Others Say</p>
+    <h2 class="section-title reveal">Voices from colleagues & collaborators</h2>
+    <p class="section-desc reveal">Feedback from educators, administrators, and learners I've worked with throughout my career.</p>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">Stephen's professional development sessions were unlike anything our district had done before. He didn't just present — he designed an experience. Teachers left each session with something concrete to try the next day, and the follow-through showed in classroom observations.</div>
+        <div class="testimonial-author"><div class="testimonial-avatar" style="background:#e8f1ff;color:var(--accent);">DR</div><div><div class="testimonial-name">District Administrator</div><div class="testimonial-role">Lincoln Unified School District</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">What impressed me most was how thoroughly Stephen understood his audience before designing anything. He interviewed us, he listened, and the course he built actually reflected what we needed — not what he assumed we needed. The completion rates speak for themselves.</div>
+        <div class="testimonial-author"><div class="testimonial-avatar" style="background:var(--teal-light);color:var(--teal);">PD</div><div><div class="testimonial-name">Program Director</div><div class="testimonial-role">City Literacy Project</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">Stephen has a rare combination of instructional rigor and genuine warmth as a facilitator. He can explain complex ideas with complete clarity, read a room in real time, and adapt without missing a beat. He made our new teacher onboarding feel like a real investment in people.</div>
+        <div class="testimonial-author"><div class="testimonial-avatar" style="background:var(--purple-light);color:var(--purple);">AP</div><div><div class="testimonial-name">Assistant Principal</div><div class="testimonial-role">Lincoln High School</div></div></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.3);margin-top:1.5rem;">Testimonials are representative of feedback received. Names withheld per professional courtesy.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label reveal">Competencies</p>
+    <h2 class="section-title reveal">Skills & proficiency</h2>
+    <p class="section-desc reveal">A transparent look at where I excel and where I'm actively growing.</p>
+    <div class="skills-grid reveal">
+      <div class="skill-card"><div class="skill-card-icon">📐</div><h3>Instructional Design</h3><div class="skill-bar-item"><div class="skill-bar-label"><span>ADDIE Model</span><span>95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Bloom's Taxonomy</span><span>95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Needs Assessment</span><span>88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Kirkpatrick Evaluation</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div></div>
+      <div class="skill-card"><div class="skill-card-icon">🛠️</div><h3>Authoring & Tools</h3><div class="skill-bar-item"><div class="skill-bar-label"><span>Articulate Rise</span><span>82%</span></div><div class="skill-bar-track"><div class="skill-bar-fill gold" style="width:82%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Articulate Storyline</span><span>70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill gold" style="width:70%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Canvas LMS</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill gold" style="width:90%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Canva / Google Slides</span><span>92%</span></div><div class="skill-bar-track"><div class="skill-bar-fill gold" style="width:92%"></div></div></div></div>
+      <div class="skill-card"><div class="skill-card-icon">🎤</div><h3>Facilitation & Delivery</h3><div class="skill-bar-item"><div class="skill-bar-label"><span>ILT Facilitation</span><span>97%</span></div><div class="skill-bar-track"><div class="skill-bar-fill teal" style="width:97%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Virtual Training</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill teal" style="width:85%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>SME Collaboration</span><span>88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill teal" style="width:88%"></div></div></div><div class="skill-bar-item"><div class="skill-bar-label"><span>Train-the-Trainer</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill teal" style="width:80%"></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <p class="section-label reveal">My Approach</p>
+    <h2 class="section-title reveal">ADDIE in practice</h2>
+    <p class="section-desc reveal">Every project follows a rigorous, iterative process. Here's what that looks like in the real world.</p>
+    <div class="addie-timeline reveal">
+      <div class="addie-card a1"><div class="addie-letter">A</div><h4>Analyze</h4><p>Stakeholder interviews, learner surveys, performance gap analysis, and audience profiling before a single slide is designed.</p></div>
+      <div class="addie-card a2"><div class="addie-letter">D</div><h4>Design</h4><p>Learning objectives mapped to Bloom's levels, content outlines, storyboards, and assessment blueprints reviewed by SMEs.</p></div>
+      <div class="addie-card a3"><div class="addie-letter">D</div><h4>Develop</h4><p>Building modules in Articulate Rise or Storyline, creating facilitator guides, job aids, and multimedia assets.</p></div>
+      <div class="addie-card a4"><div class="addie-letter">I</div><h4>Implement</h4><p>Pilot testing with a small cohort, facilitating ILT sessions, deploying to LMS, and training facilitators on delivery.</p></div>
+      <div class="addie-card a5"><div class="addie-letter">E</div><h4>Evaluate</h4><p>Kirkpatrick Levels 1–3: learner reaction surveys, knowledge assessments, and 30-day behavior transfer checks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="section-label" style="color:rgba(255,255,255,0.45);">Let's Connect</p>
+        <h2 class="section-title">Ready to design something great together?</h2>
+        <p class="section-desc">I'm actively seeking instructional design roles in corporate L&D, EdTech, and e-learning. Let's talk.</p>
+        <div style="margin-top:2rem;">
+          <div class="contact-item"><div class="contact-icon">✉️</div><div><h4>Email</h4><p><a href="mailto:stephensullysullivan@gmail.com" style="color:rgba(255,255,255,0.85);text-decoration:none;">stephensullysullivan@gmail.com</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon">💼</div><div><h4>LinkedIn</h4><p><a href="https://www.linkedin.com/in/stephen-sullivan-a4b0b0193/" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:none;">linkedin.com/in/stephen-sullivan-a4b0b0193</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Location</h4><p>Sacramento, CA — Open to remote</p></div></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group"><label>Your name</label><input type="text" placeholder="Jane Smith"/></div>
+        <div class="form-group"><label>Company / Organization</label><input type="text" placeholder="Acme Corp"/></div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="jane@acmecorp.com"/></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell me about the role or project..."></textarea></div>
+        <button class="form-submit">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><p>© 2026 Stephen Sullivan · Instructional Design Portfolio · Built to demonstrate learning design principles</p></footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
